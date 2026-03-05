@@ -1,4 +1,15 @@
+
 terraform {
+  # Terraform Cloud (https://app.terraform.io/) Optional for remote state
+  cloud {
+    organization = "earnaudeOrganizations"
+
+    workspaces {
+      project = "Terraform AWS"
+      name    = "terraform-aws"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
